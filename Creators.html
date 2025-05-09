@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light cyan background */
+            color: #1a237e; /* Dark navy text */
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px; /* Increased max-width */
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #0288d1; /* Bright blue header */
+            padding: 2em 0;
+            border-bottom: 3px solid #01579b; /* Darker blue border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            color: #b0e0e6; /* Light cyan header paragraph */
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
+
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increased minmax */
+            grid-gap: 30px; /* Increased grid-gap */
+            margin-top: 30px;
+            justify-content: center; /* Center the grid */
+        }
+
+        .creator-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #b0e0e6; /* Light cyan border */
+        }
+
+        .creator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .creator-card img {
+            width: 150px; /* Increased image size */
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #81d4fa; /* Light blue border */
+            transition: transform 0.3s ease; /* Added transition for image hover */
+        }
+
+        .creator-card img:hover {
+            transform: scale(1.1); /* Added scale transform on image hover */
+        }
+
+        .creator-card h2 {
+            color: #0288d1; /* Bright blue name */
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .creator-card h3 {
+            color: #4fc3f7; /* Light bright blue title */
+            font-size: 1.1em;
+            margin-bottom: 1em;
+            font-weight: 600;
+        }
+
+        .creator-card p {
+            color: #1a237e;
+            font-size: 1em;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+        }
+
+        footer {
+            background-color: #0288d1; /* Bright blue footer */
+            color: #fff;
+            padding: 2em 0;
+            margin-top: 30px;
+            border-top: 3px solid #01579b; /* Darker blue border */
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        footer p {
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #1e88e5;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p>A group of dedicated developers passionate about creating amazing things.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="creators-grid">
+                <div class="creator-card">
+                    <img src="lancepic.jpg" alt="Developer 1">
+                    <h2>Chan</h2>
+                    <h3>Overall Developer</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="danyelpic.jpg" alt="Developer 2">
+                    <h2>Delgado</h2>
+                    <h3>Overall Researcher</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="reypic.jpg" alt="Developer 3">
+                    <h2>Bacunawa</h2>
+                    <h3>Overall Designer</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="enzopic.jpg" alt="Developer 4">
+                    <h2>Villarin</h2>
+                    <h3>ImageGatherer</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="kianpic.jpg" alt="Developer 5">
+                    <h2>Cabusao</h2>
+                    <h3>QuizMaker</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="jerezpic.jpg" alt="Developer 6">
+                    <h2>Jerez</h2>
+                    <h3>Assistant Developer</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="solimanpic.jpg" alt="Developer 7">
+                    <h2>Soliman</h2>
+                    <h3>Topic and Main idea developer</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="elijahpic.jpg" alt="Developer 8">
+                    <h2>Esquivel</h2>
+                    <h3>Research Assistant</h3>
+                </div>
+            </div>
+            <a href="FrontPage.html" class="back-button">Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Our Team. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

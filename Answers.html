@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #64b5f6, #1e88e5);
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(5px);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #bbdefb;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #90caf9;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #90caf9;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #e3f2fd;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 5px solid #90caf9;
+        }
+
+        .correct-answer {
+            color: #a7ffeb;
+            font-weight: bold;
+        }
+
+        .your-answer {
+            color: #ffcdd2;
+            font-style: italic;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #1e88e5;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Results</h1>
+        <div id="results-summary">
+            </div>
+        <a href="FrontPage.html" class="back-button">Back to Home</a>
+    </div>
+
+    <script>
+        const resultsSummaryDiv = document.getElementById('results-summary');
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        const totalQuestions = urlParams.get('totalQuestions');
+        const userAnswers = {};
+        const correctAnswers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'c',
+            q4: 'b',
+            q5: 'b',
+            q6: 'b',
+            q7: 'b',
+            q8: 'b',
+            q9: 'b',
+            q10: 'b'
+        };
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            userAnswers[`q${i}`] = urlParams.get(`q${i}`);
+        }
+
+        let resultsHTML = `<h2>Your Score: ${score} / ${totalQuestions}</h2>`;
+
+        for (const question in correctAnswers) {
+            const questionNumber = question.substring(1);
+            const userAnswer = userAnswers[question];
+            const correctAnswer = correctAnswers[question];
+            const questionText = getQuestionText(questionNumber); // Function to get the question text
+
+            resultsHTML += `<div class="result-item">`;
+            resultsHTML += `<p><strong>Question ${questionNumber}:</strong> ${questionText}</p>`;
+            resultsHTML += `<p>Your Answer: <span class="your-answer">${userAnswer ? userAnswer.toUpperCase() : 'Not Answered'}</span></p>`;
+            resultsHTML += `<p>Correct Answer: <span class="correct-answer">${correctAnswer.toUpperCase()}</span></p>`;
+            resultsHTML += `</div>`;
+        }
+
+        resultsSummaryDiv.innerHTML = resultsHTML;
+
+        function getQuestionText(questionNumber) {
+            const questions = {
+                1: "Which of the following is a significant natural hazard for coastal communities in Caloocan?",
+                2: "What is the primary purpose of investing in early warning systems for severe storms?",
+                3: "Which of these is an example of a 'nature-based solution' for mitigating coastal erosion?",
+                4: "What is a key benefit of having clear evacuation plans and well-maintained infrastructure?",
+                5: "How does strengthening infrastructure contribute to resilience against severe storms?",
+                6: "What is the main goal of implementing land-use planning regulations in coastal areas?",
+                7: "Incorporating sea-level rise projections into coastal development policies is a key strategy for:",
+                8: "Educating residents on safety procedures and the contents of emergency kits is a part of:",
+                9: "Supporting alternative livelihoods in coastal communities aims to:",
+                10: "Raising public awareness about climate change impacts is important for:"
+            };
+            return questions[questionNumber] || "Unknown Question";
+        }
+    </script>
+</body>
+</html>

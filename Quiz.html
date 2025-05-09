@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Risk Management in Caloocan Quiz</title>
+    <style>
+        /* ... (Your existing quiz.html styles) ... */
+        body {
+            font-family: 'Nunito', sans-serif; /* Modern, friendly font */
+            margin: 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #64b5f6, #1e88e5); /* Cool blue gradient */
+            color: #fff; /* White text on blue background */
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white header */
+            color: #bbdefb; /* Light blue header text */
+            padding: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, h3 {
+            color: #bbdefb;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #bbdefb;
+            padding-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            color: #90caf9; /* Lighter blue for subheadings */
+        }
+
+        p {
+            margin-bottom: 1.2em;
+            color: #e3f2fd; /* Very light blue text */
+            font-size: 1.1em;
+        }
+
+        .quiz-section {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white section */
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(5px); /* Subtle blur for glass effect */
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #90caf9;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e3f2fd;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+        }
+
+        .options label:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #29b6f6; /* Bright blue button */
+            color: #0d47a1; /* Dark blue text on button */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button[type="submit"]:hover {
+            background-color: #03a9f4;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .correct {
+            color: #a7ffeb; /* Light green for correct */
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ffcdd2; /* Light red for incorrect */
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #1e88e5; /* Strong blue back button */
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Disaster Risk Management in Caloocan Quiz</h1>
+    </header>
+
+    <section class="quiz-section">
+        <h2>Test Your Knowledge</h2>
+        <p>Answer the following questions based on what you've learned about disaster risk management in coastal communities like Caloocan.</p>
+        <form id="quizForm">
+            <div class="question q1">1. Which of the following is a significant natural hazard for coastal communities in Caloocan?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) Severe Storms (Typhoons)</label>
+                <label><input type="radio" name="q1" value="b"> b) Volcanic Eruptions</label>
+                <label><input type="radio" name="q1" value="c"> c) Landslides</label>
+                <label><input type="radio" name="q1" value="d"> d) Blizzards</label>
+            </div>
+
+            <div class="question q2">2. What is the primary purpose of investing in early warning systems for severe storms?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) To control the weather patterns</label>
+                <label><input type="radio" name="q2" value="b"> b) To provide timely forecasts and warnings for safety</label>
+                <label><input type="radio" name="q2" value="c"> c) To improve communication networks</label>
+                <label><input type="radio" name="q2" value="d"> d) To generate economic growth</label>
+            </div>
+
+            <div class="question q3">3. Which of these is an example of a "nature-based solution" for mitigating coastal erosion?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) Building tall concrete seawalls</label>
+                <label><input type="radio" name="q3" value="b"> b) Constructing large artificial islands</label>
+                <label><input type="radio" name="q3" value="c"> c) Preserving and restoring mangrove forests</label>
+                <label><input type="radio" name="q3" value="d"> d) Implementing offshore drilling</label>
+            </div>
+
+            <div class="question q4">4. What is a key benefit of having clear evacuation plans and well-maintained infrastructure?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) It guarantees no one will be affected by a disaster</label>
+                <label><input type="radio" name="q4" value="b"> b) It ensures efficient movement of people to safe shelters</label>
+                <label><input type="radio" name="q4" value="c"> c) It can stop natural disasters from occurring</label>
+                <label><input type="radio" name="q4" value="d"> d) It primarily benefits tourists visiting the area</label>
+            </div>
+
+            <div class="question q5">5. How does strengthening infrastructure contribute to resilience against severe storms?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) It can dissipate the energy of the storm</label>
+                <label><input type="radio" name="q5" value="b"> b) It ensures buildings and essential services can withstand the impact</label>
+                <label><input type="radio" name="q5" value="c"> c) It can predict the exact path of the storm</label>
+                <label><input type="radio" name="q5" value="d"> d) It makes the community immune to all storm damage</label>
+            </div>
+
+            <div class="question q6">6. What is the main goal of implementing land-use planning regulations in coastal areas?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) To maximize the number of buildings along the coastline</label>
+                <label><input type="radio" name="q6" value="b"> b) To prevent construction in areas highly vulnerable to erosion and other hazards</label>
+                <label><input type="radio" name="q6" value="c"> c) To attract more commercial development to the coast</label>
+                <label><input type="radio" name="q6" value="d"> d) To simplify the process of obtaining building permits</label>
+            </div>
+
+            <div class="question q7">7. Incorporating sea-level rise projections into coastal development policies is a key strategy for:</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) Increasing the frequency of typhoons</label>
+                <label><input type="radio" name="q7" value="b"> b) Adapting to the long-term impacts of climate change</label>
+                <label><input type="radio" name="q7" value="c"> c) Preventing earthquakes in the region</label>
+                <label><input type="radio" name="q7" value="d"> d) Enhancing the beauty of the coastline</label>
+            </div>
+
+            <div class="question q8">8. Educating residents on safety procedures and the contents of emergency kits is a part of:</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) Hard infrastructure development</label>
+                <label><input type="radio" name="q8" value="b"> b) Community preparedness programs</label>
+                <label><input type="radio" name="q8" value="c"> c) Coastal erosion monitoring</label>
+                <label><input type="radio" name="q8" value="d"> d) Land-use planning enforcement</label>
+            </div>
+
+            <div class="question q9">9. Supporting alternative livelihoods in coastal communities aims to:</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> a) Make all residents wealthy</label>
+                <label><input type="radio" name="q9" value="b"> b) Reduce vulnerability to climate change impacts on traditional livelihoods</label>
+                <label><input type="radio" name="q9" value="c"> c) Increase reliance on a single industry</label>
+                <label><input type="radio" name="q9" value="d"> d) Discourage any form of economic activity</label>
+            </div>
+
+            <div class="question q10">10. Raising public awareness about climate change impacts is important for:</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> a) Making people panic</label>
+                <label><input type="radio" name="q10" value="b"> b) Encouraging the adoption of adaptation measures and responsible behavior</label>
+                <label><input type="radio" name="q10" value="c"> c) Ignoring the potential risks</label>
+                <label><input type="radio" name="q10" value="d"> d) Shifting blame to other communities</label>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </section>
+
+    <a href="FrontPage.html" class="back-button">Back to Home</a>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const answers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'c',
+            q4: 'b',
+            q5: 'b',
+            q6: 'b',
+            q7: 'b',
+            q8: 'b',
+            q9: 'b',
+            q10: 'b'
+        };
+        const totalQuestions = Object.keys(answers).length;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let score = 0;
+            const formData = new FormData(quizForm);
+            const userAnswers = {};
+
+            for (const question in answers) {
+                const userAnswer = formData.get(question);
+                userAnswers[question] = userAnswer;
+                if (userAnswer === answers[question]) {
+                    score++;
+                }
+            }
+
+            const params = new URLSearchParams();
+            params.append('score', score);
+            params.append('totalQuestions', totalQuestions);
+            for (const q in userAnswers) {
+                params.append(q, userAnswers[q]);
+            }
+
+            window.location.href = `Answers.html?${params.toString()}`;
+        });
+    </script>
+
+</body>
+</html>

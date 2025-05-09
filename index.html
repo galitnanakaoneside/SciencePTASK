@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRMBTP - Disaster Risk Management by Team Pogi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4c669f, #2a3d66); /* Deep, gradient background */
+            color: white;
+            line-height: 1.7;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Add a subtle box shadow on scroll (requires JavaScript) */
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #a7d1eb; /* Lighter accent color for logo */
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: #d4e6f1;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden; /* Clip the underline effect */
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #6dd5ed; /* Highlight color */
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: translateY(-2px); /* Slight vertical lift */
+        }
+
+        nav a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #a7d1eb;
+            /* Add a subtle text shadow on hover (using JavaScript for mouse position) */
+            transition: text-shadow 0.3s ease;
+        }
+
+        .hero h1:hover {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #d4e6f1;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            background-color: #6dd5ed; /* Vibrant call-to-action color */
+            color: #2a3d66;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-right: 20px;
+            position: relative;
+            overflow: hidden; /* For the ripple effect */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .hero-buttons a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .hero-buttons a:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px); /* Slight vertical lift */
+        }
+
+        .hero-buttons a:active::after {
+            width: 150%;
+            height: 150%;
+            opacity: 1;
+        }
+
+        .hero-buttons a.secondary {
+            background: transparent;
+            border: 2px solid #6dd5ed;
+            color: #6dd5ed;
+        }
+
+        .hero-buttons a.secondary:hover {
+            background-color: rgba(109, 213, 237, 0.1);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px); /* Slight vertical lift */
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 80%; /* Adjust as needed */
+            height: auto;
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add filter for a grayscale effect */
+        }
+
+        .hero-image:hover img {
+            transform: rotate(5deg) scale(1.05); /* Slight rotation and zoom */
+            filter: grayscale(20%); /* Subtle grayscale on hover */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #d4e6f1;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 1.5s forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DRMBTP</div>
+        <nav>
+            <ul>
+                <li><a href="Creators.html">Creators</a></li>
+                <li><a href="Quiz.html">Quiz</a></li>
+                <li><a href="ImageSlides.html">Image Slides</a></li>
+                <li><a href="Disasters.html">Disasters</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Empowering Communities Through Knowledge and Action</h1>
+            <p>Explore our resources, test your understanding, and join our community dedicated to disaster risk management.</p>
+            <div class="hero-buttons">
+                <a href="Quiz.html">Take the Quiz</a>
+                <a href="LearnMore.html" class="secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="1.png" alt="Community Illustration">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DRMBTP - Team Pogi</p>
+    </footer>
+
+    </body>
+</html>
